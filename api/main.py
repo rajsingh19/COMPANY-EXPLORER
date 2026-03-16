@@ -1,18 +1,8 @@
-import sys, os
-sys.path.insert(0, os.path.dirname(__file__))
-
+# api/index.py
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from scrapper import get_companies
 
 app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["GET"],
-    allow_headers=["*"],
-)
 
 _cache = None
 
