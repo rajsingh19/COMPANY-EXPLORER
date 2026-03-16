@@ -1,0 +1,136 @@
+.wrap { display: flex; flex-direction: column; gap: 14px; }
+
+.title { font-size: 1rem; font-weight: 600; color: var(--primary-h); }
+
+.count { color: var(--muted); font-weight: 400; font-size: 0.85rem; }
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.table thead tr { background: var(--surface2); }
+
+.table th {
+  padding: 12px 14px;
+  text-align: left;
+  color: var(--primary-h);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.sortable { cursor: pointer; user-select: none; }
+.sortable:hover { color: #fff; }
+
+.table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  color: var(--text);
+}
+
+.table tbody tr:last-child td { border-bottom: none; }
+.table tbody tr:hover td { background: var(--surface2); }
+
+.table th:first-child,
+.table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: inherit;
+}
+
+.table thead th:first-child {
+  z-index: 3;
+}
+
+.bestRow td { background: #0a1f0f !important; }
+.bestRow:hover td { background: #0d2912 !important; }
+
+.num { color: var(--muted); width: 36px; }
+
+.name { font-weight: 500; }
+
+.badge {
+  margin-left: 8px;
+  background: var(--yellow);
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.rating {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 2px 10px;
+  border-radius: 20px;
+  color: var(--yellow);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.about { color: var(--muted); max-width: 200px; font-size: 0.8rem; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.stat {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-size: 0.72rem;
+  color: var(--cyan);
+  white-space: nowrap;
+}
+
+@media (max-width: 960px) {
+  .table {
+    min-width: 760px;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 0.96rem;
+  }
+
+  .table {
+    min-width: 680px;
+    font-size: 0.8rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 9px 10px;
+  }
+
+  .badge {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 6px;
+  }
+
+  .about {
+    max-width: 170px;
+  }
+}
