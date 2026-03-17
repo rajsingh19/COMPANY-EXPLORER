@@ -1,8 +1,16 @@
-# api/index.py
+import os
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from scrapper import get_companies
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[os.getenv("FRONTEND_URL", "*")],
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
 
 _cache = None
 
